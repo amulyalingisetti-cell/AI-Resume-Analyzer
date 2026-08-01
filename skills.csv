@@ -1,0 +1,70 @@
+Skill,Category
+Python,Programming
+Java,Programming
+C++,Programming
+SQL,Database
+SQLite,Database
+MySQL,Database
+PostgreSQL,Database
+HTML,Web
+CSS,Web
+JavaScript,Web
+React,Web
+Spring Boot,Backend
+FastAPI,Backend
+Flask,Backend
+Machine Learning,AI/ML
+Deep Learning,AI/ML
+Data Analysis,AI/ML
+Linear Regression,AI/ML
+Scikit-learn,AI/ML
+Pandas,AI/ML
+NumPy,AI/ML
+Matplotlib,AI/ML
+TensorFlow,AI/ML
+PyTorch,AI/ML
+Git,Tools
+GitHub,Tools
+Docker,DevOps
+AWS Cloud,Cloud
+IBM Cloud,Cloud
+Jupyter Notebook,Tools
+Excel,Tools
+Microsoft Excel,Tools
+Power BI,Tools
+Tableau,Tools
+Looker,Tools
+Tally,Accounting
+SAP,ERP
+Oracle,ERP
+GST,Finance
+Income Tax,Finance
+Financial Analysis,Finance
+Bookkeeping,Accounting
+Auditing,Finance
+Payroll,HR
+Recruitment,HR
+HRMS,HR
+Performance Management,HR
+Digital Marketing,Marketing
+SEO,Marketing
+SEM,Marketing
+Social Media Marketing,Marketing
+Email Marketing,Marketing
+Content Marketing,Marketing
+Google Ads,Marketing
+Facebook Ads,Marketing
+Problem Solving,Soft Skills
+Communication,Soft Skills
+Leadership,Soft Skills
+Teamwork,Soft Skills
+Collaboration,Soft Skills
+Time Management,Soft Skills
+Critical Thinking,Soft Skills
+Adaptability,Soft Skills
+Presentation,Soft Skills
+Customer Service,Soft Skills
+Negotiation,Soft Skills
+Project Management,Management
+Agile,Management
+Scrum,Management
