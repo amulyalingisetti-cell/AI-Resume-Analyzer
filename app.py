@@ -84,11 +84,7 @@ if uploaded_file:
     # ===============================
     # Resume Parsing
     # ===============================
-import io
-
-if uploaded_file:
-    file_name = uploaded_file.name.lower()
-    st.success(f"Uploaded Successfully : {uploaded_file.name}") 
+    import io 
     
     file_bytes = uploaded_file.read()
     resume_text = ""
