@@ -74,7 +74,8 @@ st.write("")
 
 uploaded_file = st.file_uploader(
     "📂 Upload Resume",
-    type=["pdf","docx"]
+    type=["pdf", "docx"],
+    key="resume_upload_unique"
 )
 
 if uploaded_file:
