@@ -3,7 +3,7 @@ import pandas as pd
 
 def match_jobs(skills):
 
-    jobs = pd.read_csv("data/job_roles.csv")
+    jobs = pd.read_csv("job_roles.csv")
 
     results = []
 
