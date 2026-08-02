@@ -9,3 +9,4 @@ matplotlib
 PyPDF2
 regex
 nltk
+fpdf2
