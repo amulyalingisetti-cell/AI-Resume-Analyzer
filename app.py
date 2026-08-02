@@ -84,7 +84,7 @@ if uploaded_file:
     # ===============================
     # Resume Parsing
     # ===============================
-    import io
+import io
 
 uploaded_file = st.file_uploader(
     "📂 Upload Resume",
