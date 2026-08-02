@@ -84,20 +84,28 @@ if uploaded_file:
     # ===============================
     # Resume Parsing
     # ===============================
-    import io 
-    
+    import io
+
+uploaded_file = st.file_uploader(
+    "📂 Upload Resume",
+    type=["pdf", "docx"]
+)
+
+if uploaded_file is not None:
+
+    st.success(f"Uploaded Successfully: {uploaded_file.name}")
+
+    file_name = uploaded_file.name.lower()
     file_bytes = uploaded_file.read()
-    resume_text = ""
-    
+
     if file_name.endswith(".pdf"):
         resume_text = extract_pdf(io.BytesIO(file_bytes))
+
     elif file_name.endswith(".docx"):
         resume_text = extract_docx(io.BytesIO(file_bytes))
-    
-    st.write(f"**Text length extracted:** {len(resume_text)}")
-    
-    if len(resume_text) < 10:
-        st.error("Could not extract text. File might be image-based PDF or empty docx")
+
+    else:
+        st.error("Unsupported file type")
         st.stop()
 
     resume_text = clean_text(resume_text)
