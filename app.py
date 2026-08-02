@@ -87,10 +87,6 @@ if uploaded_file:
     # ===============================
 import io
 
-uploaded_file = st.file_uploader(
-    "📂 Upload Resume",
-    type=["pdf", "docx"]
-)
 
 if uploaded_file is not None:
 
