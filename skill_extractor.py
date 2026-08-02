@@ -3,7 +3,7 @@ import re
 
 def extract_skills(resume_text):
 
-    skills_df = pd.read_csv("data/skills.csv")
+    skills_df = pd.read_csv("skills.csv")
 
     resume_text = resume_text.lower()
 
