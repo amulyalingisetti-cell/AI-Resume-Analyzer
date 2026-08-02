@@ -291,9 +291,9 @@ Add screenshots here:
 
 **Amulya Lingisetti**
 
-B.Tech – Computer Science and Engineering (Artificial Intelligence & Machine Learning)
+June Batch - Artificial Intelligence
 
-VIT-AP University
+unlox.com
 
 ---
 
