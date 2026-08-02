@@ -10,3 +10,4 @@ PyPDF2
 regex
 nltk
 fpdf2
+docx2txt
