@@ -78,13 +78,6 @@ uploaded_file = st.file_uploader(
     key="resume_upload_unique"
 )
 
-if uploaded_file:
-
-    st.success(f"Uploaded Successfully : {uploaded_file.name}")
-
-    # ===============================
-    # Resume Parsing
-    # ===============================
 import io
 
 
