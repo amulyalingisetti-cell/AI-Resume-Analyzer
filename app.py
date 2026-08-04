@@ -114,12 +114,17 @@ if uploaded_file is not None:
 st.subheader("📄 Extracted Resume Summary")
 
 # ---------- Name ----------
+import re
+
 name = "Not Found"
 
-words = resume_text.split()
+match = re.search(
+    r"^[A-Za-z]+\s+[A-Za-z]+",
+    resume_text.strip()
+)
 
-if len(words) >= 2:
-    name = f"{words[0].title()} {words[1].title()}"
+if match:
+    name = match.group().title()
 # ---------- Email ----------
 email_match = re.search(r'[\w\.-]+@[\w\.-]+\.\w+', resume_text)
 email = email_match.group() if email_match else "Not Found"
