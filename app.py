@@ -110,7 +110,75 @@ if uploaded_file is not None:
     resume_text = clean_text(resume_text) 
 
     st.subheader("📄 Extracted Resume")
-    st.text_area("Resume Content", resume_text, height=300, key="resume2")
+    st.text_area("Resume Content", resume_text, height=300, key="resume2")import re
+
+st.subheader("📄 Extracted Resume")
+
+# Extract Details
+name = "Not Found"
+email = "Not Found"
+phone = "Not Found"
+
+# Email
+email_match = re.search(r'[\w\.-]+@[\w\.-]+\.\w+', resume_text)
+if email_match:
+    email = email_match.group()
+
+# Phone
+phone_match = re.search(r'(\+91[\s-]?)?[6-9]\d{9}', resume_text)
+if phone_match:
+    phone = phone_match.group()
+
+# Name (First 2-3 words)
+words = resume_text.split()
+if len(words) >= 2:
+    name = words[0].title() + " " + words[1].title()
+
+# Education
+education = []
+edu_keywords = [
+    "btech","bachelor","computer science","engineering",
+    "vit","cgpa","intermediate","ssc"
+]
+
+for word in edu_keywords:
+    if word.lower() in resume_text.lower():
+        education.append(word.title())
+
+education = ", ".join(set(education)) if education else "Not Found"
+
+# Skills
+skills_text = ", ".join(skills) if skills else "Not Found"
+
+# Projects
+project_keywords = [
+    "travel","crop","resume","expense",
+    "dashboard","prediction","analysis"
+]
+
+projects = []
+
+for p in project_keywords:
+    if p.lower() in resume_text.lower():
+        projects.append(p.title())
+
+projects = ", ".join(projects) if projects else "Not Found"
+
+# Display
+col1, col2 = st.columns(2)
+
+with col1:
+    st.success(f"👤 Name : {name}")
+    st.success(f"📧 Email : {email}")
+    st.success(f"📱 Phone : {phone}")
+
+with col2:
+    st.success(f"🎓 Education : {education}")
+    st.success(f"🛠 Skills : {len(skills)} Skills Found")
+    st.success(f"📂 Projects : {projects}")
+
+with st.expander("📄 View Complete Resume Text"):
+    st.write(resume_text)
     st.write("Text length:", len(resume_text))
 
     skills = extract_skills(resume_text)
