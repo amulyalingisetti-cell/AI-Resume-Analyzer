@@ -126,6 +126,7 @@ phone_match = re.search(r'(\+91[\s-]?)?[6-9]\d{9}', resume_text)
 phone = phone_match.group() if phone_match else "Not Found"
 
 # ---------- Skills ----------
+skills = extract_skills(resume_text)
 skills_text = ", ".join(skills[:10])
 
 # ---------- Education ----------
