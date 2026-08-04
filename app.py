@@ -342,9 +342,10 @@ if uploaded_file is not None:
     roadmap = generate_roadmap(
         selected_job["Missing"]
     )
+    roadmap = generate_roadmap(selected_job["Missing"])
 
-    for _, step in enumerate(roadmap, start=1):
-    st.info(step)
+    for step in roadmap:
+         st.info(step)
 
     # ===============================
     # Career Suggestion
