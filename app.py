@@ -343,9 +343,8 @@ if uploaded_file is not None:
         selected_job["Missing"]
     )
 
-    for i, step in enumerate(roadmap, start=1):
-
-        st.info(f"Week {i}: {step}")
+    for _, step in enumerate(roadmap, start=1):
+    st.info(step)
 
     # ===============================
     # Career Suggestion
