@@ -114,8 +114,16 @@ if uploaded_file is not None:
 st.subheader("📄 Extracted Resume Summary")
 
 # ---------- Name ----------
-lines = [line.strip() for line in resume_text.split("\n") if line.strip()]
-name = lines[0].title() if lines else "Not Found"
+name = "Not Found"
+
+text = resume_text.lower()
+
+if "btech" in text:
+    name = resume_text[:text.index("btech")].strip().title()
+else:
+    words = resume_text.split()
+    if len(words) >= 2:
+        name = " ".join(words[:2]).title()
 
 # ---------- Email ----------
 email_match = re.search(r'[\w\.-]+@[\w\.-]+\.\w+', resume_text)
