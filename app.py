@@ -334,18 +334,28 @@ if uploaded_file is not None:
         st.success("🎉 No Missing Skills")
 
     # ===============================
-    # Learning Roadmap
-    # ===============================
+# Learning Roadmap
+# ===============================
 
-    st.subheader("📚 Personalized Learning Roadmap")
+st.subheader("📚 Personalized Learning Roadmap")
 
-    roadmap = generate_roadmap(
-        selected_job["Missing"]
+roadmap = generate_roadmap(selected_job["Missing"])
+
+for step in roadmap:
+    st.markdown(
+        f"""
+        <div style="
+            background-color:#1f3b5b;
+            padding:15px;
+            border-radius:10px;
+            margin-bottom:10px;
+            color:white;
+            font-size:18px;">
+            📅 {step}
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
-
-    for i, step in enumerate(roadmap, start=1):
-
-        st.info(f"Week {i}: {step}")
 
     # ===============================
     # Career Suggestion
