@@ -333,54 +333,43 @@ if uploaded_file is not None:
 
         st.success("🎉 No Missing Skills")
 
-# ===============================
-# Learning Roadmap
-# ===============================
+    # ===============================
+    # Learning Roadmap
+    # ===============================
 
     st.subheader("📚 Personalized Learning Roadmap")
 
-    if 'selected_job' in locals() and selected_job is not None:
+    roadmap = generate_roadmap(
+        selected_job["Missing"]
+    )
 
-         roadmap = generate_roadmap(selected_job["Missing"])
+    for i, step in enumerate(roadmap, start=1):
 
-         for step in roadmap:
-             st.markdown(
-            f"""
-<div style="background:#1f3b5b;padding:15px;border-radius:10px;
-margin-bottom:10px;font-size:18px;color:white;">
-📅 {step}
-</div>
-""",
-            unsafe_allow_html=True,
-        )
+        st.info(f"Week {i}: {step}")
 
-    else:
-         st.warning("Please analyze your resume first.")
-   # ===============================
-# Career Suggestion
-# ===============================
+    # ===============================
+    # Career Suggestion
+    # ===============================
 
-st.subheader("🚀 Career Suggestion")
-
-if 'selected_job' in locals():
+    st.subheader("🚀 Career Suggestion")
 
     if selected_job["Score"] >= 90:
+
         st.success(
             f"You are ready to apply for **{selected_job['Role']}** internships."
         )
 
     elif selected_job["Score"] >= 70:
+
         st.info(
             f"Learn the remaining skills and apply for **{selected_job['Role']}** positions."
         )
 
     else:
+
         st.warning(
             f"Complete the roadmap before applying for **{selected_job['Role']}** jobs."
-        )
-
-else:
-    st.warning("Please analyze your resume first.")
+        )    # ===============================
     # Download Resume Report
     # ===============================
 
