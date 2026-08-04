@@ -115,9 +115,6 @@ if uploaded_file is not None:
 
     skills = extract_skills(resume_text)
     st.subheader("🎯 Skills Found")
-    st.write(", ".join(skills))
-
-    st.subheader("🎯 Skills Found")
     col1,col2,col3 = st.columns(3)
 
     for i,skill in enumerate(skills):
