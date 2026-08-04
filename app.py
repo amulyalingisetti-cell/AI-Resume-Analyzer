@@ -7,7 +7,6 @@ from report_generator import generate_pdf_report
 from resume_parser import extract_pdf, extract_docx
 from skill_extractor import extract_skills
 from matcher import match_jobs
-from roadmap_generator import generate_roadmap
 
 # ===============================
 # Page Configuration
