@@ -1,3 +1,4 @@
+import re
 from roadmap import generate_roadmap
 import streamlit as st
 import plotly.express as px
@@ -111,7 +112,6 @@ if uploaded_file is not None:
 
     st.subheader("📄 Extracted Resume")
     st.text_area("Resume Content", resume_text, height=300, key="resume2")
-import re
 
     st.subheader("📄 Extracted Resume")
 
