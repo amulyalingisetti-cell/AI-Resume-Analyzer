@@ -109,10 +109,6 @@ if uploaded_file is not None:
 
     resume_text = clean_text(resume_text) 
 
-    import re
-
-st.subheader("📄 Extracted Resume Summary")
-
 # ---------- Name ----------
 import re
 
