@@ -337,23 +337,16 @@ if uploaded_file is not None:
 # Learning Roadmap
 # ===============================
 
-st.subheader("📚 Personalized Learning Roadmap")
-
 roadmap = generate_roadmap(selected_job["Missing"])
 
 for step in roadmap:
     st.markdown(
         f"""
-        <div style="
-            background-color:#1f3b5b;
-            padding:15px;
-            border-radius:10px;
-            margin-bottom:10px;
-            color:white;
-            font-size:18px;">
-            📅 {step}
-        </div>
-        """,
+<div style="background:#1f3b5b;padding:15px;border-radius:10px;
+margin-bottom:10px;font-size:18px;color:white;">
+📅 {step}
+</div>
+""",
         unsafe_allow_html=True,
     )
 
