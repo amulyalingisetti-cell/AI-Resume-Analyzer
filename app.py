@@ -185,13 +185,31 @@ if uploaded_file is not None:
         else:
             categories["Tools"].append(skill)
 
-    for category,items in categories.items():
+    st.subheader("📚 Skill Categories")
 
-        if items:
+for category, items in categories.items():
 
-            st.info(
-                f"**{category}** : {', '.join(items)}"
-            )
+    if items:
+
+        st.markdown(
+            f"""
+<div style="
+background-color:#1f3b5b;
+padding:15px;
+border-radius:10px;
+margin-bottom:10px;
+color:white;
+font-size:17px;
+">
+
+<b>📂 {category}</b><br><br>
+
+{", ".join(items)}
+
+</div>
+""",
+            unsafe_allow_html=True,
+        )
 
     # ===============================
     # Job Matching
