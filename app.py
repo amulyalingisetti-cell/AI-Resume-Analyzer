@@ -111,7 +111,7 @@ if uploaded_file is not None:
 
     st.subheader("📄 Extracted Resume")
     st.text_area("Resume Content", resume_text, height=300, key="resume2")
-    import re
+import re
 
     st.subheader("📄 Extracted Resume")
 
