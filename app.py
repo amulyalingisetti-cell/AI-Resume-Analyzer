@@ -116,15 +116,10 @@ st.subheader("📄 Extracted Resume Summary")
 # ---------- Name ----------
 name = "Not Found"
 
-text = resume_text.lower()
+words = resume_text.split()
 
-if "btech" in text:
-    name = resume_text[:text.index("btech")].strip().title()
-else:
-    words = resume_text.split()
-    if len(words) >= 2:
-        name = " ".join(words[:2]).title()
-
+if len(words) >= 2:
+    name = f"{words[0].title()} {words[1].title()}"
 # ---------- Email ----------
 email_match = re.search(r'[\w\.-]+@[\w\.-]+\.\w+', resume_text)
 email = email_match.group() if email_match else "Not Found"
