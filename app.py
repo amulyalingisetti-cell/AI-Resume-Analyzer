@@ -109,9 +109,73 @@ if uploaded_file is not None:
 
     resume_text = clean_text(resume_text) 
 
-    st.subheader("📄 Extracted Resume")
-    st.text_area("Resume Content", resume_text, height=300, key="resume2")
-    st.write("Text length:", len(resume_text))
+    import re
+
+st.subheader("📄 Extracted Resume Summary")
+
+# ---------- Name ----------
+lines = [line.strip() for line in resume_text.split("\n") if line.strip()]
+name = lines[0].title() if lines else "Not Found"
+
+# ---------- Email ----------
+email_match = re.search(r'[\w\.-]+@[\w\.-]+\.\w+', resume_text)
+email = email_match.group() if email_match else "Not Found"
+
+# ---------- Phone ----------
+phone_match = re.search(r'(\+91[\s-]?)?[6-9]\d{9}', resume_text)
+phone = phone_match.group() if phone_match else "Not Found"
+
+# ---------- Skills ----------
+skills_text = ", ".join(skills[:10])
+
+# ---------- Education ----------
+education = "B.Tech (AI & ML)" if "btech" in resume_text.lower() else "Not Found"
+
+# ---------- Projects ----------
+projects = []
+
+project_list = [
+    "TravelSphere Management System",
+    "PocketWise Fintech Application",
+    "Global AI Job Salaries Analysis",
+    "NYC Airbnb Price Prediction",
+    "Smart Crop Advisory System",
+    "AI Resume Analyzer"
+]
+
+for project in project_list:
+    if project.lower() in resume_text.lower():
+        projects.append(project)
+
+# ---------- Display ----------
+col1, col2 = st.columns(2)
+
+with col1:
+    st.success(f"👤 Name\n\n{name}")
+    st.success(f"📧 Email\n\n{email}")
+    st.success(f"📱 Phone\n\n{phone}")
+
+with col2:
+    st.success(f"🎓 Education\n\n{education}")
+    st.success(f"💻 Skills\n\n{len(skills)} Skills Found")
+    st.success(f"📂 Projects\n\n{len(projects)} Projects")
+
+st.markdown("---")
+
+st.subheader("📂 Project Names")
+
+for project in projects:
+    st.info(project)
+
+st.markdown("---")
+
+with st.expander("📄 View Full Extracted Resume"):
+    st.text_area(
+        "Resume Text",
+        resume_text,
+        height=250,
+        key="resume_preview"
+    )
 
     skills = extract_skills(resume_text)
     st.subheader("🎯 Skills Found")
